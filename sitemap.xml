@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://creditrepairmap.com/</loc>
+    <lastmod>2025-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://creditrepairmap.com/og-image.png</image:loc>
+      <image:title>The Complete Credit Repair Map eBook</image:title>
+      <image:caption>Fix your credit score in 90 days with the Complete Credit Repair Map — $10</image:caption>
+    </image:image>
+  </url>
+</urlset>
