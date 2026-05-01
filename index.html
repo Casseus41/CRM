@@ -213,8 +213,17 @@
       display: flex; align-items: center; justify-content: space-between;
       padding: 0 40px; height: 64px;
     }
-    .nav-logo { font-size: 1.1rem; font-weight: 800; color: var(--text); }
-    .nav-logo span { color: var(--blue); }
+    .nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo-img {
+  height: 36px;
+  width: auto;
+  display: block;
+}
     .nav-cta {
       background: var(--blue); color: #fff; border: none;
       border-radius: 100px; font-family: 'Nunito', sans-serif;
@@ -706,7 +715,9 @@
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Credit Repair <span>Map</span></div>
+  <a href="/" class="nav-logo">
+  <img src="logo1.png" alt="Credit Repair Map" class="nav-logo-img" />
+</a>
   <div style="display:flex;align-items:center;gap:16px;"><a href="#contact" style="font-size:13px;font-weight:700;color:var(--text-2);text-decoration:none;" onmouseover="this.style.color='var(--blue)'" onmouseout="this.style.color='var(--text-2)'">Contact</a><button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">Get it for $10 →</button></div>
 </nav>
 
