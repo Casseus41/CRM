@@ -792,15 +792,16 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
-    @media (max-width: 700px) {
-      nav { padding: 0 20px; }
-      section { padding: 56px 20px; }
-      .hero { padding: 60px 20px 48px; }
-      .util-grid { grid-template-columns: 1fr; }
-      .score-sim-wrap { flex-direction: column; align-items: flex-start; }
-      .impact-layout { flex-direction: column; }
-      .del-label { width: 140px; font-size: 12px; }
-    }
+@media (max-width: 700px) {
+  nav { padding: 0 20px; }
+  section { padding: 56px 20px; }
+  .hero { padding: 60px 20px 48px; }
+  .util-grid { grid-template-columns: 1fr; }
+  .score-sim-wrap { flex-direction: column; align-items: center; }
+  .score-controls { text-align: center; width: 100%; }
+  .impact-layout { flex-direction: column; }
+  .del-label { width: 140px; font-size: 12px; }
+}
   </style>
 </head>
 <body>
