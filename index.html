@@ -211,7 +211,7 @@
       background: rgba(255,255,255,0.95); backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
       display: flex; align-items: center; justify-content: space-between;
-      padding: 0 40px; height: 64px;
+      padding: 20px 40px; height: 120px;
     }
     .nav-logo {
   display: flex;
@@ -220,7 +220,7 @@
 }
 
 .nav-logo-img {
-  height: 50px;
+  height: 130px;
   width: auto;
   display: block;
 }
@@ -317,7 +317,7 @@
     .book-cover-title { font-size: 1.9rem; font-weight: 900; color: #fff; line-height: 1.1; margin-bottom: 8px; }
     .book-cover-title span { color: var(--yellow); }
     .book-cover-sub { font-size: 11px; color: rgba(255,255,255,.7); line-height: 1.6; margin-bottom: 24px; }
-    .book-cover-stats { display: flex; gap: 16px; }
+    .book-cover-stats { display: flex; gap: 16px; justify-content: center; }
     .bcs { text-align: center; }
     .bcs-num { font-size: 1.3rem; font-weight: 900; color: var(--yellow); }
     .bcs-lbl { font-size: 9px; color: rgba(255,255,255,.6); font-weight: 600; letter-spacing: .05em; }
@@ -668,6 +668,64 @@
     .ct-body a { color: var(--blue); text-decoration: none; font-weight: 700; }
     .ct-body a:hover { text-decoration: underline; }
 
+    /* Newsletter signup card (next to contact form) */
+    .newsletter-card {
+      background: linear-gradient(145deg, var(--blue), #1557b0);
+      border-radius: var(--r-lg); padding: 26px 24px;
+      box-shadow: 0 4px 20px rgba(26,115,232,.25);
+      color: #fff; position: relative; overflow: hidden;
+    }
+    .newsletter-card::before {
+      content: ''; position: absolute; top: -40px; right: -40px;
+      width: 140px; height: 140px; border-radius: 50%;
+      background: rgba(255,255,255,.08);
+    }
+    .nl-eyebrow {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.18); border-radius: 100px;
+      padding: 4px 12px; font-size: 11px; font-weight: 700;
+      letter-spacing: .06em; text-transform: uppercase;
+      color: #fff; margin-bottom: 12px; position: relative; z-index: 1;
+    }
+    .nl-title {
+      font-size: 1.1rem; font-weight: 900; line-height: 1.25;
+      margin-bottom: 6px; position: relative; z-index: 1;
+    }
+    .nl-sub {
+      font-size: 13px; line-height: 1.6; color: rgba(255,255,255,.85);
+      margin-bottom: 16px; position: relative; z-index: 1;
+    }
+    .nl-form { display: flex; gap: 8px; position: relative; z-index: 1; }
+    .nl-input {
+      flex: 1; background: rgba(255,255,255,.95);
+      border: 1.5px solid transparent; border-radius: 100px;
+      font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 500;
+      color: var(--text); padding: 11px 16px; outline: none;
+      transition: background .2s, border-color .2s; min-width: 0;
+    }
+    .nl-input:focus { background: #fff; border-color: rgba(255,255,255,.6); }
+    .nl-input::placeholder { color: var(--text-3); }
+    .nl-btn {
+      background: #fff; color: var(--blue); border: none; border-radius: 100px;
+      font-family: 'Nunito', sans-serif; font-size: 13px; font-weight: 800;
+      padding: 11px 18px; cursor: pointer; flex-shrink: 0;
+      transition: transform .15s, box-shadow .2s;
+    }
+    .nl-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(0,0,0,.15); }
+    .nl-perks {
+      display: flex; flex-wrap: wrap; gap: 14px; margin-top: 14px;
+      font-size: 11.5px; color: rgba(255,255,255,.78);
+      position: relative; z-index: 1;
+    }
+    .nl-perks span { display: inline-flex; align-items: center; gap: 4px; }
+    .nl-success {
+      display: none; margin-top: 12px; padding: 10px 14px;
+      background: rgba(255,255,255,.18); border-radius: 100px;
+      font-size: 13px; font-weight: 700; color: #fff;
+      position: relative; z-index: 1;
+    }
+    .nl-success.show { display: block; animation: fadeUp .4s ease both; }
+
     /* Setup notice */
     .setup-notice {
       background: linear-gradient(135deg, #fff8e1, #fff3e0);
@@ -686,10 +744,41 @@
     /* ── FOOTER ── */
     footer {
       background: var(--text); color: rgba(255,255,255,.6);
-      padding: 40px; text-align: center; font-size: 13px; line-height: 1.8;
+      padding: 56px 40px 32px; text-align: center; font-size: 13px; line-height: 1.8;
     }
-    footer a { color: rgba(255,255,255,.6); text-decoration: none; }
+    footer a { color: rgba(255,255,255,.6); text-decoration: none; transition: color .2s; }
+    footer a:hover { color: rgba(255,255,255,.95); }
     footer strong { color: rgba(255,255,255,.9); }
+    .footer-brand { font-size: 16px; margin-bottom: 4px; }
+    .footer-tagline { color: rgba(255,255,255,.5); font-size: 13px; margin-bottom: 28px; }
+    .footer-divider {
+      width: 60px; height: 2px; background: rgba(255,255,255,.15);
+      margin: 0 auto 24px; border-radius: 100px;
+    }
+    .footer-social {
+      display: flex; gap: 14px; justify-content: center; margin-bottom: 28px;
+    }
+    .footer-social a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 38px; height: 38px; border-radius: 50%;
+      background: rgba(255,255,255,.08); transition: background .2s, transform .2s;
+    }
+    .footer-social a:hover { background: rgba(255,255,255,.18); transform: translateY(-2px); }
+    .footer-social svg { width: 16px; height: 16px; fill: rgba(255,255,255,.85); }
+    .footer-warning {
+      max-width: 640px; margin: 0 auto 24px;
+      background: rgba(234,67,53,.08); border: 1px solid rgba(234,67,53,.25);
+      border-radius: var(--r-md); padding: 14px 20px;
+      font-size: 12px; color: rgba(255,255,255,.75); line-height: 1.7;
+    }
+    .footer-warning strong { color: #ff8a80; font-weight: 800; }
+    .footer-links { margin-bottom: 20px; font-size: 12.5px; }
+    .footer-links a { margin: 0 8px; }
+    .footer-copy {
+      font-size: 12px; color: rgba(255,255,255,.45);
+      padding-top: 24px; border-top: 1px solid rgba(255,255,255,.08);
+      max-width: 720px; margin: 0 auto; line-height: 1.7;
+    }
 
     /* ── ANIMATIONS ── */
     @keyframes fadeUp {
@@ -1082,7 +1171,7 @@
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">What if my score is really low — like under 500? <span class="faq-arrow">▾</span></div>
-        <div class="faq-a">James started with a 461 and zero active accounts. The system is specifically designed to work from any starting point. Chapter 6 (Rapid Rebuild) covers exactly how to build positive history from scratch — including secured cards that require no credit check at all.</div>
+        <div class="faq-a">James started with a 461 and zero active accounts. The system is specifically designed to work from any starting point. Chapter 6 (Build and Borrow) covers exactly how to build positive history from scratch — including secured cards that require no credit check at all.</div>
       </div>
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Does disputing items hurt my credit? <span class="faq-arrow">▾</span></div>
@@ -1095,6 +1184,30 @@
       <div class="faq-item">
         <div class="faq-q" onclick="toggleFaq(this)">Is the $10 a subscription? <span class="faq-arrow">▾</span></div>
         <div class="faq-a">No — it's a one-time payment for instant access to the full PDF ebook. No subscriptions, no upsells, no hidden charges. You own it forever.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you offer 1-on-1 credit repair services? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Yes — we offer Credit Repair Guidance as an optional add-on at checkout. That said, we genuinely encourage every customer to walk the journey themselves. Our agents quite literally follow this same map step-by-step — there is no secret method behind the scenes. The book is comprehensive enough that doing it yourself produces the same results, while keeping every dollar in your pocket and teaching you skills that protect your credit for life.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Will paying an old collection restart the statute of limitations? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">It can — and that's exactly why Chapter 2 walks you through this carefully. The statute of limitations (SOL) is how long a creditor has to legally sue you for a debt, typically 3–6 years depending on your state. Paying or even acknowledging an old debt can reset that clock in some states. The book teaches you how to identify your state's SOL and use pay-for-delete language that protects you while still resolving the account.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I use this system if I'm in active bankruptcy? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">If you're in an active Chapter 7 or Chapter 13 case, hold off on disputing items until your case is discharged or completed — your trustee handles communication with creditors during the case. Once discharged, this system is one of the fastest ways to rebuild. Many people use the Rapid Rebuild and Authorized User chapters to reach a 700+ score within 18–24 months of discharge.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if I'm a victim of identity theft? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Identity theft accounts must be removed under the FCRA, full stop — and the process is even stronger than a normal dispute. File an identity theft report at IdentityTheft.gov, place a fraud alert with one of the three bureaus (it propagates to the others), and freeze your credit. The book includes the relevant dispute language and walks you through the contact directory in Appendix B to handle each bureau correctly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need to pay for credit monitoring software? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">No. Several reliable free options give you everything you need: Credit Karma (TransUnion + Equifax), Chase Credit Journey (Experian, free without a Chase account), and Experian's free monitoring tier. The book lists all of them and explains how to use them together to spot changes within days. Paid monitoring is convenient but not required.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How is this different from a credit repair company? <span class="faq-arrow">▾</span></div>
+        <div class="faq-a">Credit repair companies charge $100–$200 per month and use the exact same federal laws — FCRA, FDCPA, and CROA — that this book teaches you to use yourself. The difference: they take 6–12 months and cost $1,000+, you take 90 days and pay $10. They're also legally prohibited from doing anything you can't do yourself, which is exactly what the Credit Repair Organizations Act (CROA) confirms.</div>
       </div>
     </div>
     <div style="margin-top:48px;">
@@ -1146,6 +1259,7 @@
             <option>I want to share my results 🎉</option>
             <option>Technical / download issue</option>
             <option>Billing / payment question</option>
+			<option>I just want to say hi!</option>
             <option>Something else</option>
           </select>
           <div class="cf-error-msg" id="err-subject">Please select a subject.</div>
@@ -1167,12 +1281,28 @@
       <!-- INFO TILES -->
       <div class="contact-info-card">
 
+        <!-- Newsletter signup -->
+        <div class="newsletter-card">
+          <div class="nl-eyebrow">📬 Free Tips</div>
+          <div class="nl-title">Get one credit-boosting tip every Monday.</div>
+          <div class="nl-sub">Real, actionable strategies straight from the book — no spam, no fluff. Unsubscribe in one click.</div>
+          <div class="nl-form">
+            <input type="email" id="nl-email" class="nl-input" placeholder="you@example.com"/>
+            <button class="nl-btn" onclick="submitNewsletter()">Subscribe</button>
+          </div>
+          <div class="nl-perks">
+            <span>✓ Weekly tip</span>
+            <span>✓ No spam</span>
+            <span>✓ 1-click unsubscribe</span>
+          </div>
+          <div class="nl-success" id="nl-success">✅ You're in! Check your inbox to confirm.</div>
+        </div>
+
         <div class="contact-tile">
           <div class="ct-icon blue">📧</div>
           <div class="ct-body">
-            <strong>Email Us Directly</strong>
-            <p>Replace with your email address:<br>
-            <a href="mailto:hello@creditrepairmap.com">hello@creditrepairmap.com</a></p>
+            <strong>Email Us Directly @</strong>
+            <a href="mailto:help@creditrepairmap.com">help@creditrepairmap.com</a></p>
           </div>
         </div>
 
@@ -1207,11 +1337,43 @@
 
 <!-- FOOTER -->
 <footer>
-  <strong>The Complete Credit Repair Map</strong><br>
-  For educational and informational purposes only. Not legal or financial advice.<br>
-  Results are not guaranteed. Every credit situation is unique.<br><br>
-  <a href="#">AnnualCreditReport.com</a> · <a href="#">CFPB</a> · <a href="#">FTC</a><br><br>
-  © 2025 Credit Repair Map · All rights reserved
+  <div class="footer-brand"><strong>The Complete Credit Repair Map</strong></div>
+  <div class="footer-tagline">Delete your past. Build your future.</div>
+  <div class="footer-divider"></div>
+
+  <div class="footer-social" aria-label="Social media">
+    <a href="#" aria-label="Facebook" title="Facebook">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.9.2-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H8v3h2.5V21h3z"/>
+      </svg>
+    </a>
+    <a href="#" aria-label="Instagram" title="Instagram">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.2 2.2.4.6.2 1 .5 1.4.9.4.4.7.8.9 1.4.2.4.4 1 .4 2.2.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.2 1.8-.4 2.2-.2.6-.5 1-.9 1.4-.4.4-.8.7-1.4.9-.4.2-1 .4-2.2.4-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.2-2.2-.4-.6-.2-1-.5-1.4-.9-.4-.4-.7-.8-.9-1.4-.2-.4-.4-1-.4-2.2C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.2-1.8.4-2.2.2-.6.5-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.2 1-.4 2.2-.4C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1.1.1-1.7.2-2.1.4-.5.2-.9.4-1.3.8-.4.4-.6.8-.8 1.3-.2.4-.3 1-.4 2.1-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1.1.2 1.7.4 2.1.2.5.4.9.8 1.3.4.4.8.6 1.3.8.4.2 1 .3 2.1.4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1.1-.1 1.7-.2 2.1-.4.5-.2.9-.4 1.3-.8.4-.4.6-.8.8-1.3.2-.4.3-1 .4-2.1.1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1.1-.2-1.7-.4-2.1-.2-.5-.4-.9-.8-1.3-.4-.4-.8-.6-1.3-.8-.4-.2-1-.3-2.1-.4-1.2-.1-1.6-.1-4.7-.1zm0 3.1c2.7 0 4.9 2.2 4.9 4.9s-2.2 4.9-4.9 4.9S7.1 14.7 7.1 12 9.3 7.1 12 7.1zm0 8.1c1.8 0 3.2-1.4 3.2-3.2S13.8 8.8 12 8.8 8.8 10.2 8.8 12s1.4 3.2 3.2 3.2zm6.3-8.3c0 .6-.5 1.1-1.1 1.1-.6 0-1.1-.5-1.1-1.1 0-.6.5-1.1 1.1-1.1.6 0 1.1.5 1.1 1.1z"/>
+      </svg>
+    </a>
+  </div>
+
+  <div class="footer-warning">
+    <strong>⚠ Copyright Notice:</strong> The Complete Credit Repair Map ebook, including all written content, letter templates, charts, and design, is protected by U.S. and international copyright law. <strong>Unauthorized reproduction, distribution, resale, file-sharing, or republication of any portion of this ebook is strictly prohibited</strong> and will be pursued to the fullest extent of the law. Each purchase grants a single-user, non-transferable license for personal use only.
+  </div>
+
+  <div style="margin-bottom:16px;">
+    For educational and informational purposes only. Not legal or financial advice.<br>
+    Results are not guaranteed. Every credit situation is unique.
+  </div>
+
+  <div class="footer-links">
+    <a href="https://www.annualcreditreport.com" target="_blank" rel="noopener">AnnualCreditReport.com</a> ·
+    <a href="https://www.consumerfinance.gov" target="_blank" rel="noopener">CFPB</a> ·
+    <a href="https://www.ftc.gov" target="_blank" rel="noopener">FTC</a> ·
+    <a href="#contact">Contact</a>
+  </div>
+
+  <div class="footer-copy">
+    © 2017–2026 Credit Repair Map. <strong>All rights reserved.</strong><br>
+    No part of this website or the ebook may be reproduced, distributed, or transmitted in any form or by any means without prior written permission.
+  </div>
 </footer>
 
 
@@ -1421,6 +1583,21 @@ async function submitContact() {
     btn.textContent = 'Failed — check your connection';
     btn.disabled = false;
   }
+}
+
+// ── Newsletter Signup ─────────────────────────────
+function submitNewsletter() {
+  const input = document.getElementById('nl-email');
+  const email = input.value.trim();
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    input.style.borderColor = '#ea4335';
+    input.focus();
+    return;
+  }
+  input.style.borderColor = '';
+  document.getElementById('nl-success').classList.add('show');
+  input.value = '';
+  // TODO: wire to your newsletter provider (Mailchimp, ConvertKit, Resend audiences, etc.)
 }
   
 </script>
